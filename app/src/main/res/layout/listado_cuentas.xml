@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtNombreC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <TextView
+        android:id="@+id/txtNumeroCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+
+        android:textColor="@color/colorAccent"
+        />
+
+    <TextView
+        android:id="@+id/txtTipoC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+
+        android:textColor="@color/colorAccent"
+        />
+
+    <TextView
+        android:id="@+id/txtSaldo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+
+        android:textColor="@color/colorAccent"
+        />
+
+</LinearLayout>

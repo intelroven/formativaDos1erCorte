@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FormativaDos</string>
+    <string name="filtro_de_nombre">Filtro de nombre</string>
 </resources>

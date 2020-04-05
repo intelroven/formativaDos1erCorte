@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,20 +23,46 @@ public class Listar extends AppCompatActivity {
     ListView listado;
     ArrayAdapter<Cuenta> arrayAdapter;
     ArrayList<Cuenta> cuentas;
+    EditText filtro;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar1);
 
+       filtro = findViewById(R.id.txtFiltro);
+
+
         Intent in = getIntent();
         cuentas = in.getParcelableArrayListExtra("est");
 
         listado = findViewById(R.id.listCuentas);
         arrayAdapter = new CuentaAdapter(this, cuentas);
-        arrayAdapter.notifyDataSetChanged();
         listado.setAdapter(arrayAdapter);
-        arrayAdapter.notifyDataSetChanged();
+
+
+        filtro.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                arrayAdapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+
+
     }
 
     @Override
